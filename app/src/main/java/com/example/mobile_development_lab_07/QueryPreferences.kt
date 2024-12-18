@@ -1,4 +1,4 @@
-// Указываем пакет, в котором находится наш класс
+
 package com.example.mobile_development_lab_07
 
 import android.content.Context
@@ -25,8 +25,6 @@ object QueryPreferences {
             putString(PREF_SEARCH_QUERY, query) // Сохраняем поисковый запрос
         }
     }
-
-    // Получение последнего идентификатора результата
     fun getLastResultId(context: Context): String {
         return PreferenceManager.getDefaultSharedPreferences(context)
             .getString(PREF_LAST_RESULT_ID, "")!! // Возвращаем последний идентификатор результата или пустую строку
@@ -38,8 +36,6 @@ object QueryPreferences {
             putString(PREF_LAST_RESULT_ID, lastResultId) // Сохраняем последний идентификатор результата
         }
     }
-
-    // Проверка состояния опроса (включен/выключен)
     fun isPolling(context: Context): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context)
             .getBoolean(PREF_IS_POLLING, false) // Возвращаем состояние опроса или false по умолчанию
